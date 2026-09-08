@@ -749,6 +749,7 @@
                     <value>ctype::FlowstepVariant/cname::ExternalCall/version::1.0.4</value>
                 </ifl:property>
             </bpmn2:extensionElements>
+            <bpmn2:incoming>SequenceFlow_88</bpmn2:incoming>
             <bpmn2:outgoing>SequenceFlow_55</bpmn2:outgoing>
         </bpmn2:serviceTask>
         <bpmn2:endEvent id="EndEvent_2" name="End">
@@ -762,7 +763,6 @@
                     <value>ctype::FlowstepVariant/cname::MessageEndEvent/version::1.1.0</value>
                 </ifl:property>
             </bpmn2:extensionElements>
-            <bpmn2:incoming>SequenceFlow_88</bpmn2:incoming>
             <bpmn2:incoming>SequenceFlow_85</bpmn2:incoming>
             <bpmn2:incoming>SequenceFlow_70</bpmn2:incoming>
             <bpmn2:messageEventDefinition/>
@@ -838,7 +838,7 @@ WHERE SERVICE_KAKUNIN_NO='9000000634'</value>
         </bpmn2:callActivity>
         <bpmn2:startEvent id="StartEvent_13" name="Start Timer 1">
             <bpmn2:outgoing>SequenceFlow_14</bpmn2:outgoing>
-            <bpmn2:timerEventDefinition id="TimerEventDefinition_151577">
+            <bpmn2:timerEventDefinition id="TimerEventDefinition_11125">
                 <bpmn2:extensionElements>
                     <ifl:property>
                         <key>scheduleKey</key>
@@ -859,7 +859,7 @@ WHERE SERVICE_KAKUNIN_NO='9000000634'</value>
                 </bpmn2:extensionElements>
             </bpmn2:timerEventDefinition>
         </bpmn2:startEvent>
-        <bpmn2:sequenceFlow id="SequenceFlow_88" sourceRef="CallActivity_10" targetRef="EndEvent_2"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_88" sourceRef="CallActivity_10" targetRef="ServiceTask_54"/>
         <bpmn2:sequenceFlow id="SequenceFlow_85" sourceRef="CallActivity_59" targetRef="EndEvent_2"/>
         <bpmn2:sequenceFlow id="SequenceFlow_70" sourceRef="CallActivity_69" targetRef="EndEvent_2"/>
         <bpmn2:sequenceFlow id="SequenceFlow_67" sourceRef="ServiceTask_66" targetRef="CallActivity_69"/>
@@ -889,6 +889,9 @@ WHERE SERVICE_KAKUNIN_NO='9000000634'</value>
             <bpmndi:BPMNShape bpmnElement="CallActivity_59" id="BPMNShape_CallActivity_59">
                 <dc:Bounds height="60.0" width="100.0" x="627.0" y="137.0"/>
             </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="Participant_92" id="BPMNShape_Participant_92">
+                <dc:Bounds height="140.0" width="100.0" x="1061.0" y="311.0"/>
+            </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="ServiceTask_7" id="BPMNShape_ServiceTask_7">
                 <dc:Bounds height="60.0" width="100.0" x="186.0" y="137.0"/>
             </bpmndi:BPMNShape>
@@ -913,9 +916,6 @@ WHERE SERVICE_KAKUNIN_NO='9000000634'</value>
             <bpmndi:BPMNShape bpmnElement="Participant_Process_1" id="BPMNShape_Participant_Process_1">
                 <dc:Bounds height="220.0" width="1691.0" x="-380.0" y="60.0"/>
             </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="Participant_92" id="BPMNShape_Participant_92">
-                <dc:Bounds height="140.0" width="100.0" x="1061.0" y="311.0"/>
-            </bpmndi:BPMNShape>
             <bpmndi:BPMNEdge bpmnElement="SequenceFlow_70" id="BPMNEdge_SequenceFlow_70" sourceElement="BPMNShape_CallActivity_69" targetElement="BPMNShape_EndEvent_2">
                 <di:waypoint x="977.0" xsi:type="dc:Point" y="165.0"/>
                 <di:waypoint x="1211.0" xsi:type="dc:Point" y="165.0"/>
@@ -924,11 +924,9 @@ WHERE SERVICE_KAKUNIN_NO='9000000634'</value>
                 <di:waypoint x="236.0" xsi:type="dc:Point" y="167.0"/>
                 <di:waypoint x="377.0" xsi:type="dc:Point" y="167.0"/>
             </bpmndi:BPMNEdge>
-            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_88" id="BPMNEdge_SequenceFlow_88" sourceElement="BPMNShape_CallActivity_10" targetElement="BPMNShape_EndEvent_2">
-                <di:waypoint x="377.0" xsi:type="dc:Point" y="165.0"/>
-                <di:waypoint x="377.0" xsi:type="dc:Point" y="248.0"/>
-                <di:waypoint x="1211.0" xsi:type="dc:Point" y="248.0"/>
-                <di:waypoint x="1211.0" xsi:type="dc:Point" y="165.0"/>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_88" id="BPMNEdge_SequenceFlow_88" sourceElement="BPMNShape_CallActivity_10" targetElement="BPMNShape_ServiceTask_54">
+                <di:waypoint x="377.0" xsi:type="dc:Point" y="166.0"/>
+                <di:waypoint x="527.0" xsi:type="dc:Point" y="166.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="SequenceFlow_55" id="BPMNEdge_SequenceFlow_55" sourceElement="BPMNShape_ServiceTask_54" targetElement="BPMNShape_CallActivity_59">
                 <di:waypoint x="527.0" xsi:type="dc:Point" y="167.0"/>
